@@ -1,5 +1,4 @@
-import hashlib
-import argparse
+import hashlib, argparse, ntpath
 
 def parseargs():
     parser = argparse.ArgumentParser()
@@ -11,15 +10,18 @@ def parseargs():
 def main():
     args = parseargs().parse_args()
 
-    f = open(args.file, "rb")
-    digest = hashlib.file_digest(f, args.function)
-    f.close()
-    hexdig = digest.hexdigest()
-    print(hexdig)
-    if hexdig == args.sum:
-        print("File integrity sucessfully checked")
+    if ntpath.isfile(args.file):
+        f = open(args.file, "rb")
+        digest = hashlib.file_digest(f, args.function)
+        f.close()
+        hexdig = digest.hexdigest()
+        print(hexdig)
+        if hexdig == args.sum:
+            print("File integrity sucessfully checked")
+        else:
+            print("File integrity check failed")
     else:
-        print("File integrity check failed")
+        print("File not found")
 
 
 if __name__ == "__main__":
