@@ -13,9 +13,9 @@ def main():
     if ntpath.isfile(args.file):
         f = open(args.file, "rb")
         digest = hashlib.file_digest(f, args.function)
-        f.close()
         hexdig = digest.hexdigest()
-        print(hexdig)
+        print(hexdig + " *" + ntpath.basename(args.file))
+        f.close()
         if hexdig == args.sum:
             print("File integrity sucessfully checked")
         else:
