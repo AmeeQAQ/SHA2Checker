@@ -5,8 +5,8 @@ Developed in Python 3.11 using the secure hash library [**hashlib**](https://doc
 Download the Python script available in this repository (`sha2checker.py`). Once downloaded, run it with `python` through your terminal.  
 ***WARNING: Be sure to have Python 3.11 installed. Otherwise, the script will not work***.  
 You will have to define **3** parameters:  
->`-f`, `--function`: Which SHA-2 function you need to hash your file with (sha224/sha256/sha384/sha512). The script also admits MD5 (md5) and **possibly** (untested) other hashing functions supported by hashlib.py  
-`-fi`, `--file`: file to be hashed. Use the absolute route if the file is not in the same directory as the script.  
+>`-fi`, `--file`: file to be hashed. Use the absolute route if the file is not in the same directory as the script.  
+`-f`, `--function`: Which SHA-2 function you need to hash your file with (sha224/sha256/sha384/sha512). The script also admits MD5 (md5) and **possibly** (untested) other hashing functions supported by hashlib.py  
 `-s`, `--sum`: Hash value issued by the file owner.  
 *Taken directly from each argument's help text*.
 
