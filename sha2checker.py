@@ -2,8 +2,10 @@ import hashlib, argparse, ntpath
 
 def parseargs():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-f", "--function", help="Which SHA-2 function you need to hash your file with (sha224/sha256/sha384/sha512).", required=True)
-    parser.add_argument("-fi", "--file", help="file to be hashed. Use the absolute route if the file is not in the same directory as the script", required=True)
+    parser.add_argument("-f", "--function", 
+                        help="Which SHA-2 function you need to hash your file with (sha224/sha256/sha384/sha512). The script also admits MD5 (md5) and **possibly** (untested) other hashing functions supported by hashlib.py", required=True)
+    parser.add_argument("-fi", "--file", 
+                        help="file to be hashed. Use the absolute route if the file is not in the same directory as the script", required=True)
     parser.add_argument("-s", "--sum", help="Hash value issued by the file owner", required=True)
     return parser
 
