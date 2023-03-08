@@ -14,7 +14,7 @@ def hashcheck(file, func, sum):
     else:
         print("File not found")
 
-def parseargs():
+def parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("-fi", "--file", 
                         help="file to be hashed. Use the absolute route if the file is not in the same directory as the script", required=True)
@@ -24,7 +24,7 @@ def parseargs():
     return parser
 
 def main():
-    args = parseargs().parse_args()
+    args = parser().parse_args()
 
     hashcheck(args.file, args.function, args.sum)
 
