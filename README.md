@@ -10,4 +10,4 @@ You will have to define **3** parameters:
 `-s`, `--sum`: Hash value issued by the file owner.  
 *Taken directly from each argument's help text*.
 
-After that, you will be prompted with the hash generated alongisde the name of the digested file (a87b7d9f0... *foo.txt). The next prompt will be if both the checksum generated and the one provided as a parameter are equal or not.  
+After that, you will be prompted with the hash generated alongside the name of the digested file (a87b7d9f0... *foo.txt). The next prompt will be if both the checksum generated and the one provided as a parameter are equal or not.  
