@@ -1,4 +1,4 @@
-import hashlib, argparse, ntpath
+import hashlib, argparse, ntpath, sys
 
 def hashcheck(file, func, sum):
     if ntpath.isfile(file):
@@ -9,10 +9,13 @@ def hashcheck(file, func, sum):
         print(hexdig + " *" + ntpath.basename(file))
         if hexdig == sum:
             print("File integrity sucessfully checked")
+            sys.exit(0)
         else:
             print("File integrity check failed")
+            sys.exit(1)
     else:
         print("File not found")
+        sys.exit(2)
 
 def parser():
     parser = argparse.ArgumentParser()
